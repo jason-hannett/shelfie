@@ -9,7 +9,7 @@ class Form extends Component{
         this.state = {
             product_name: '',
             product_price: 0,
-            img: ''
+            img: '',
         }
         // console.log(this.state)
     }
@@ -43,9 +43,8 @@ class Form extends Component{
         console.log(this.props.product)
         return(
             <div className='form-container'>
-                <div className='form-img'>
-                    <img alt='product'/>
-                </div>
+                    <img className='form-img' src={this.state.img} />
+                <div className='form-input-container'>
                 image
                 <input 
                      value={this.state.img}
@@ -61,9 +60,14 @@ class Form extends Component{
                     value={this.state.product_price}
                     onChange={e => this.priceHandler(e.target.value)}
                 />
-                <div className='form-buttons'>
+                </div>
+                <div className='form-buttons-container'>
+                    <div className='form-cancel-button'>
                     <button >Cancel</button>
+                    </div>
+                    <div className='form-add-button'>
                     <button onClick={() => this.createProduct()}>Add to Inventory</button>
+                    </div>
                 </div>
             </div>
         )

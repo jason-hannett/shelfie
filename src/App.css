@@ -3,8 +3,9 @@
 }
 
 header {
+  /* position: sticky; */
   height: 75x;
-  background-color: red;
+  background-color: rgb(171,42,25);
   color: white;
   display: flex;
   align-items: center;
@@ -12,8 +13,77 @@ header {
   padding-left: 20px;
 }
 
-.form-container {
+/* .form-container {
   height: 350px;
-  width: 250px;
-  background-color: green;
+  width: 300px;
+  background-color: rgb(57,216,134);
+  margin-left: 630px;
+  margin-top: -50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 2%;
 }
+
+.form-img {
+  height: 120px;
+  width: 200px;
+  margin-top: 10px;
+  background-image: url('https://3ie87c2dond928rt2e2zzo8o-wpengine.netdna-ssl.com/wp-content/themes/gonzo/images/no-image-featured-image.png');
+  background-size: contain;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.form-input-container {
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-buttons-container {
+  width: 255px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  height: 30px;
+  background-color: rgb(236,106,90);
+  border-radius: 10%;
+  border-style: none;
+}
+
+.product-container {
+  height: 160px;
+  width: 420px;
+  background-color: rgb(236,106,90);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 30px;
+  margin-left: 100px;
+  border-radius: 2%;
+  box-sizing: border-box;
+}
+
+.product-image{
+  padding-left: 10px;
+  height: 140px;
+}
+
+.product-info-container {
+  padding-left: 10px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+
+.product-price {
+  margin-top: -15px;
+} */

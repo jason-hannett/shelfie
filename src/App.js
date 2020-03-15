@@ -12,10 +12,14 @@ class App extends Component{
     super()
 
     this.state = {
-      inventory: []
+      inventory: [],
+      updatedInventory: [],
+
     }
     this.inventoryHandler = this.inventoryHandler.bind(this)
     this.componentDidMount = this.componentDidMount.bind(this)
+    // this.toggleEdit = this.toggleEdit.bind(this)
+    // this.handleEdit = this.handleEdit.bind(this)
     console.log(this.state)
   }
 
@@ -25,6 +29,9 @@ class App extends Component{
       this.setState({inventory: response.data})
     })
   }
+
+
+
 
   
   inventoryHandler(product){
@@ -36,8 +43,8 @@ class App extends Component{
     return(
       <div>
         <Header />
-        <Dashboard product={this.state.inventory}/>
-        <Form inventory={this.componentDidMount}/>
+        <Dashboard product={this.state.inventory} inventory={this.componentDidMount} />
+        <Form inventory={this.componentDidMount} updatedInventory={this.state.updatedInventory} />
       </div>
     )
   }
