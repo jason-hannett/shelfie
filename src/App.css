@@ -3,7 +3,6 @@
 }
 
 header {
-  /* position: sticky; */
   height: 75x;
   background-color: rgb(171,42,25);
   color: white;
@@ -13,18 +12,26 @@ header {
   padding-left: 20px;
 }
 
-/* .form-container {
+.header-buttons {
+  margin-left: 50px; 
+}
+
+.ai-button {
+  margin-left: 10px;
+}
+
+ .form-container {
   height: 350px;
   width: 300px;
   background-color: rgb(57,216,134);
-  margin-left: 630px;
-  margin-top: -50px;
+  margin-left: 390px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
   box-sizing: border-box;
-  position: absolute;
+  /* position: absolute; */
   border-radius: 2%;
 }
 
@@ -65,7 +72,7 @@ button {
   align-items: center;
   justify-content: flex-start;
   margin-top: 30px;
-  margin-left: 100px;
+  margin-left: 300px;
   border-radius: 2%;
   box-sizing: border-box;
 }
@@ -86,4 +93,4 @@ button {
 
 .product-price {
   margin-top: -15px;
-} */
+} 

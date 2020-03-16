@@ -8,12 +8,19 @@ class Dashboard extends Component{
         super()
 
         this.state = {
-            updateName: '',
-            updatePrice: 0,
-            updateImg: ''
-        }
+            inventory: []
+            
+      
+          }
         this.delete = this.delete.bind(this)
     }
+
+    componentDidMount(){
+        axios.get('/api/inventory')
+        .then(response => {
+          this.setState({inventory: response.data})
+        })
+      }
 
     delete(id) {
         axios.delete(`/api/inventory/${id}`)
@@ -24,8 +31,8 @@ class Dashboard extends Component{
     }
 
     render(){
-        console.log(this.props)
-        const dashboardDisplay = this.props.product.map((element, index) => {
+        console.log(this.state.inventory)
+        const dashboardDisplay = this.state.inventory.map((element, index) => {
             return <Product key={index} product={element} delete={this.delete} />
         })
         return(
