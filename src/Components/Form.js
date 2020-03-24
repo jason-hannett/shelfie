@@ -10,18 +10,31 @@ class Form extends Component{
         this.state = {
             product_name: '',
             product_price: 0,
-            img: '',
+            img: ''
         }
         // console.log(this.state)
     }
 
-    getProduct(id){
-        axios.get(`/api/inventory/${id}`)
-        .then(response => {
-            this.setState({inventory: response.data})
-        })
+    componentDidMount(){
+        if (this.props.match.params.id){
+            axios.get(`/api/inventory/${this.props.match.params.id}`)
+            .then(response => {
+                this.setState({
+                    product_name: response.data.product_name,
+                    product_price: response.data.product_price,
+                    img: response.data.img
+                })
+            })
+        }
     }
 
+    
+    editProduct(id){
+        axios.put(`/api/inventory/${id}`, this.state)
+            .then(() => {
+                this.props.history.push('/')
+            })
+        }
     
     createProduct(){
         console.log('button pressed')
@@ -48,7 +61,7 @@ class Form extends Component{
 
 
     render(){
-        console.log(this.props.product)
+        console.log(this.props)
         return(
             <div className='form-container'>
                     <img className='form-img' src={this.state.img} />
@@ -75,10 +88,16 @@ class Form extends Component{
                     <button >Cancel</button>
                     </Link>
                     </div>
-                    <div className='form-add-button'>
-                    <Link to='/'>
-                    <button onClick={() => this.createProduct()}>Add to Inventory</button>
-                    </Link>
+                    <div>
+                        {this.props.match.params.id ? (
+                            <button onClick={() => this.editProduct()}>Save Changes</button>
+                        ):(
+                        <div className='form-add-button'>
+                        <Link to='/'>
+                        <button onClick={() => this.createProduct()}>Add to Inventory</button>
+                        </Link>
+                        </div>    
+                        )}
                     </div>
                 </div>
             </div>

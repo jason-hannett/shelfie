@@ -1,5 +1,6 @@
 import React, {Component} from 'react' 
 import Product from './Product'
+// import Form from './Form'
 import axios from 'axios'
 
 class Dashboard extends Component{
@@ -31,7 +32,7 @@ class Dashboard extends Component{
     }
 
     render(){
-        console.log(this.state.inventory)
+        // console.log(this.state.inventory)
         const dashboardDisplay = this.state.inventory.map((element, index) => {
             return <Product key={index} product={element} delete={this.delete} />
         })
